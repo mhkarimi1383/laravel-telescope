@@ -9,6 +9,7 @@ use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Context;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Js;
 use Illuminate\Support\Str;
@@ -124,6 +125,28 @@ class Telescope
     public static $shouldRecord = false;
 
     /**
+     * Checks if telescope is enabled or not (also uses sample rate config).
+     *
+     * @return bool
+     */
+    public static function isEnabled()
+    {
+        if (Context::has('telescope_enabled')) {
+            return Context::get('telescope_enabled');
+        }
+        $telescope_enabled = true;
+        if (! config('telescope.enabled')) {
+            $telescope_enabled = false;
+        }
+        else if (config('telescope.sample_rate') < rand(0, 100)) {
+            return $telescope_enabled = false;
+        }
+        Context::add('telescope_enabled', $telescope_enabled);
+
+        return $telescope_enabled;
+    }
+
+    /**
      * Register the Telescope watchers and start recording if necessary.
      *
      * @param  \Illuminate\Foundation\Application  $app
@@ -131,7 +154,7 @@ class Telescope
      */
     public static function start($app)
     {
-        if (! config('telescope.enabled')) {
+        if (! static::isEnabled()) {
             return;
         }
 

@@ -21,7 +21,7 @@ class TelescopeServiceProvider extends ServiceProvider
         $this->registerCommands();
         $this->registerPublishing();
 
-        if (! config('telescope.enabled')) {
+        if (! Telescope::isEnabled()) {
             return;
         }
 
