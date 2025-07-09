@@ -56,6 +56,7 @@ class GateWatcher extends Watcher
         Telescope::recordGate(IncomingEntry::make([
             'ability' => $ability,
             'result' => $this->gateResult($result),
+            'message' => $this->gateMessage($result),
             'arguments' => $this->formatArguments($arguments),
             'file' => $caller['file'] ?? null,
             'line' => $caller['line'] ?? null,
@@ -91,6 +92,21 @@ class GateWatcher extends Watcher
     }
 
     /**
+     * Get the message returned by the gate.
+     *
+     * @param  bool|\Illuminate\Auth\Access\Response  $result
+     * @return null
+     */
+    private function gateMessage($result): ?string
+    {
+        if ($result instanceof Response) {
+            return $result->message();
+        }
+
+        return null;
+    }
+
+    /**
      * Format the given arguments.
      *
      * @param  array  $arguments
@@ -99,7 +115,15 @@ class GateWatcher extends Watcher
     private function formatArguments($arguments)
     {
         return collect($arguments)->map(function ($argument) {
-            return $argument instanceof Model ? FormatModel::given($argument) : $argument;
+            if (is_object($argument) && method_exists($argument, 'formatForTelescope')) {
+                return $argument->formatForTelescope();
+            }
+
+            if ($argument instanceof Model) {
+                return FormatModel::given($argument);
+            }
+
+            return $argument;
         })->toArray();
     }
 }

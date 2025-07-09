@@ -1,6 +1,84 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/telescope/compare/v5.2.2...5.x)
+## [Unreleased](https://github.com/laravel/telescope/compare/v5.10.0...5.x)
+
+## [v5.10.0](https://github.com/laravel/telescope/compare/v5.9.1...v5.10.0) - 2025-07-07
+
+* Migrate to Vite by [@nckrtl](https://github.com/nckrtl) in https://github.com/laravel/telescope/pull/1598
+* Fix workbench integration and fix `compile-assets` build by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/telescope/pull/1601
+* Bump esbuild and vite by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1600
+* Apply PSR-3 replacements in Telescope logs by [@DragosMocrii](https://github.com/DragosMocrii) in https://github.com/laravel/telescope/pull/1604
+* Feature/show gates response message by [@Geelik](https://github.com/Geelik) in https://github.com/laravel/telescope/pull/1570
+
+## [v5.9.1](https://github.com/laravel/telescope/compare/v5.9.0...v5.9.1) - 2025-06-10
+
+* [5.x] Fixes non-needed update on `telescope_entries` by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/telescope/pull/1599
+
+## [v5.9.0](https://github.com/laravel/telescope/compare/v5.8.0...v5.9.0) - 2025-06-03
+
+* Fix broken preview image in `README.md` by [@sajjadhossainshohag](https://github.com/sajjadhossainshohag) in https://github.com/laravel/telescope/pull/1596
+* feat: Added `laravel:reverb:restart` to CacheWatcher default ignore list by [@Hyrran](https://github.com/Hyrran) in https://github.com/laravel/telescope/pull/1597
+
+## [v5.8.0](https://github.com/laravel/telescope/compare/v5.7.0...v5.8.0) - 2025-05-26
+
+* Update logo by [@iamdavidhill](https://github.com/iamdavidhill) in https://github.com/laravel/telescope/pull/1581
+* Bump http-proxy-middleware from 2.0.6 to 2.0.9 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1584
+* Bump axios from 1.7.4 to 1.8.2 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1585
+* Bump elliptic from 6.6.0 to 6.6.1 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1586
+* [5.x] Add ignore option to CacheWatcher by [@mostafaznv](https://github.com/mostafaznv) in https://github.com/laravel/telescope/pull/1594
+
+## [v5.7.0](https://github.com/laravel/telescope/compare/v5.6.0...v5.7.0) - 2025-03-27
+
+* [5.x] Record plain/text request content by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/telescope/pull/1578
+
+## [v5.6.0](https://github.com/laravel/telescope/compare/v5.5.1...v5.6.0) - 2025-03-17
+
+* [5.x] Fix empty avatar on nullable user email by [@ShadyZekry](https://github.com/ShadyZekry) in https://github.com/laravel/telescope/pull/1575
+* Add Hydrated Models Count to Models Table on the Request Details Page by [@niteen1593](https://github.com/niteen1593) in https://github.com/laravel/telescope/pull/1576
+
+## [v5.5.1](https://github.com/laravel/telescope/compare/v5.5.0...v5.5.1) - 2025-03-10
+
+* Check implementation instead of assuming it is View by [@AJenbo](https://github.com/AJenbo) in https://github.com/laravel/telescope/pull/1571
+
+## [v5.5.0](https://github.com/laravel/telescope/compare/v5.4.0...v5.5.0) - 2025-02-11
+
+* [5.x] Config for queue delay by [@techieforfun](https://github.com/techieforfun) in https://github.com/laravel/telescope/pull/1563
+* Supports Laravel 12 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/telescope/pull/1565
+* Ensure `formatForTelescope` method is used in request watcher by [@duncanmcclean](https://github.com/duncanmcclean) in https://github.com/laravel/telescope/pull/1566
+* Bump serialize-javascript from 6.0.1 to 6.0.2 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1567
+
+## [v5.4.0](https://github.com/laravel/telescope/compare/v5.3.0...v5.4.0) - 2025-01-24
+
+* [5.x] Save and view response headers by [@gdebrauwer](https://github.com/gdebrauwer) in https://github.com/laravel/telescope/pull/1561
+* [5.x] Ability to override how objects are serialized by [@duncanmcclean](https://github.com/duncanmcclean) in https://github.com/laravel/telescope/pull/1562
+
+## [v5.3.0](https://github.com/laravel/telescope/compare/v5.2.6...v5.3.0) - 2024-12-26
+
+* [5.x] Tag client request hostname automatically by [@dshafik](https://github.com/dshafik) in https://github.com/laravel/telescope/pull/1553
+* Bump [@babel](https://github.com/babel)/traverse from 7.22.20 to 7.26.4 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1555
+
+## [v5.2.6](https://github.com/laravel/telescope/compare/v5.2.5...v5.2.6) - 2024-11-25
+
+* [5.x] Supports PHP 8.4 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/telescope/pull/1544
+* [5.x] fix implicitly marking parameter as nullable by [@SupianIDz](https://github.com/SupianIDz) in https://github.com/laravel/telescope/pull/1550
+
+## [v5.2.5](https://github.com/laravel/telescope/compare/v5.2.4...v5.2.5) - 2024-10-31
+
+* Bump elliptic from 6.5.7 to 6.6.0 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1541
+
+## [v5.2.4](https://github.com/laravel/telescope/compare/v5.2.3...v5.2.4) - 2024-10-29
+
+* [5.x] Fix `JobWatcher` when processing deleted instance of `SerializesModels` by [@hapidjus](https://github.com/hapidjus) in https://github.com/laravel/telescope/pull/1539
+
+## [v5.2.3](https://github.com/laravel/telescope/compare/v5.2.2...v5.2.3) - 2024-10-13
+
+* Bump webpack from 5.88.2 to 5.94.0 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1513
+* Bump elliptic from 6.5.4 to 6.5.7 by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1515
+* Bump send and express by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1522
+* Bump serve-static and express by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1521
+* Update logo to support dark/light theme by [@milewski](https://github.com/milewski) in https://github.com/laravel/telescope/pull/1529
+* Bump cookie and express by [@dependabot](https://github.com/dependabot) in https://github.com/laravel/telescope/pull/1535
+* [5.x] Added `isEvent` and `isCache` methods to `IncomingEntry` by [@mrazinshaikh](https://github.com/mrazinshaikh) in https://github.com/laravel/telescope/pull/1536
 
 ## [v5.2.2](https://github.com/laravel/telescope/compare/v5.2.1...v5.2.2) - 2024-08-26
 
